@@ -6,11 +6,12 @@
 
 
 
-var value1, value2, result, resultValue;
+var value1, value2, result;
 
 
 window.onload = function() {
 
+//TODO: find a way to load first html and then run prompts, only after prompts the result shall be dispayed
 
     var h2 = document.createElement("h2")
     var paraph = document.createElement("p")
@@ -26,31 +27,33 @@ window.onload = function() {
     var h1result = document.createElement("h1")
 
 
-        myfunc('first')
-        myfunc('second')
+        // compare('first')
+        // compare('second')
 
 
-    console.log(value1)
-    console.log(value2)
 
-    if (value1 > value2) { result = value1;
-    alert(`the first value is bigger: ${value1}`)}
-    else if  (value2 > value1) {
-        result = value2;
-        alert(`the second value is bigger: ${value2}`)
-    } else {
-        alert(`entered values are equal: ${value1}`);
-        result = value1
-    }
 
-    var resultText = document.createTextNode( "Result:" + result)
+    var resultText = document.createTextNode( "Result:")
     h1result.appendChild(resultText)
 
     document.body.appendChild(h1result)
     var btn = document.createElement("BUTTON");   // Create a <button> element
-    btn.innerHTML = "reload";
+    btn.innerHTML = "Start Over";
     btn.addEventListener('click', ()=> {
-        window.location.reload()
+        // window.location.reload()
+        compare('first')
+        compare('second')
+
+        if (value1 > value2) { result = value1;
+            alert(`the first value is bigger: ${value1}`)}
+        else if  (value2 > value1) {
+            result = value2;
+            alert(`the second value is bigger: ${value2}`)
+        } else {
+            alert(`entered values are equal: ${value1}`);
+            result = value1 + '. Equal values were entered'
+        }
+        h1result.innerText = "Result: " + result;
     })
     document.body.appendChild(btn)
 
@@ -58,7 +61,7 @@ window.onload = function() {
 
 };
 
-function myfunc(param) {
+function compare(param) {
     var value = window.prompt(`please enter ${param} integer number`, )
     if (value === "" || value === null) {
         alert('you entered empty string or canceled, try again')
