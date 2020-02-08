@@ -1,13 +1,6 @@
-var coinFlip, choice;
+var coinFlip, choice, result;
 var counter = 0;
 var totalPlayed = 0;
-
-    var text = "The flip was heads and you chose heads...you win!"
-    var text1 = "The flip was heads but you chose tails...you lose!"
-    var text2 = "The flip was tails but you chose heads...you lose! "
-    var text3 = "The flip was tails and you chose tails...you win"
-
-var result;
 
 window.onload = function() {
 
@@ -35,13 +28,6 @@ window.onload = function() {
     document.body.appendChild(h2).appendChild(paraph)
 
     var h1result = document.createElement("h1")
-
-
-    // compare('first')
-    // compare('second')
-
-
-
 
     var resultText = document.createTextNode( "Result:")
     h1result.appendChild(resultText)
