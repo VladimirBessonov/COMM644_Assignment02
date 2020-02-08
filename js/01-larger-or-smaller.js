@@ -11,11 +11,11 @@ var value1, value2, result;
 
 window.onload = function() {
 
-//TODO: find a way to load first html and then run prompts, only after prompts the result shall be dispayed
+
 
     var h2 = document.createElement("h2")
     var paraph = document.createElement("p")
-    var taskTitle = document.createTextNode("Task Number 01")
+    var taskTitle = document.createTextNode("Task 01 Larger or Smaller? (5 points)")
     var taskContext = document.createTextNode(
         "Create an application that accepts two integers within two separate prompts.\n" +
         "    Then, display only the larger of the two within the browser window.\n" +
