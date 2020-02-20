@@ -65,11 +65,11 @@ function compare(param) {
     var value = window.prompt(`please enter ${param} integer number`, )
     if (value === "" || value === null) {
         alert('you entered empty string or canceled, try again')
-        myfunc(param)
+        compare(param)
     }
     if (Number(value) === NaN) {
         alert('you entered not a number, try again')
-        myfunc(param)
+        compare(param)
     }
     if (Number.isInteger(Number(value))) {
         if (param === 'first') {
@@ -80,7 +80,7 @@ function compare(param) {
 
     } else {
         alert('you entered not INTEGER')
-        myfunc(param)
+        compare(param)
 
     }
 }

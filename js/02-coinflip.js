@@ -37,39 +37,34 @@ window.onload = function() {
     btn.innerHTML = "Start Playing";
     btn.addEventListener('click', ()=> {
         // window.location.reload()
-        selectDace()
-        coinFlip =  Math.round(Math.random());
-        if (choice == 1) {
-            switch (coinFlip) {
-                case 1:
-                    alert("The flip was heads and you chose heads...you win!")
-                    counter++;
-                    totalPlayed++;
-                    result = `score ${counter}, total played ${totalPlayed}`
-                    break;
-                case 0:
-                    alert("The flip was tails but you chose heads...you lose! ")
-                    totalPlayed++;
-                    result = `score ${counter}, total played ${totalPlayed}`
-                    break;
+
+            selectDace()
+            coinFlip = Math.round(Math.random());
+            if (choice == 1) {
+                switch (coinFlip) {
+                    case 1:
+                        alert("The flip was heads and you chose heads...you win!")
+                        result = `winner`
+                        break;
+                    case 0:
+                        alert("The flip was tails but you chose heads...you lose! ")
+                        result = `Loser`
+                        break;
+                }
             }
-        }
-        if (choice == 0) {
-            switch (coinFlip) {
-                case 0:
-                    alert("The flip was tails and you chose tails...you win")
-                    counter++;
-                    totalPlayed++;
-                    result = `score ${counter}, total played ${totalPlayed}`
-                    break;
-                case 1:
-                    alert("The flip was heads but you chose tails...you lose!")
-                    totalPlayed++;
-                    result = `score ${counter}, total played ${totalPlayed}`
-                    break;
-                default:
+            if (choice == 0) {
+                switch (coinFlip) {
+                    case 0:
+                        alert("The flip was tails and you chose tails...you win")
+                        result = `Winner`
+                        break;
+                    case 1:
+                        alert("The flip was heads but you chose tails...you lose!")
+                        result = `Loser`
+                        break;
+                    default:
+                }
             }
-        }
 
         h1result.innerText = "Result: " + result;
     })
@@ -83,7 +78,6 @@ window.onload = function() {
     document.body.appendChild(btn)
     document.body.appendChild(btnReset)
 
-    // document.write(result)
 
 };
 
